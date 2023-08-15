@@ -1,4 +1,4 @@
-package Afisha.reviews.Resourse;
+package Afisha.reviews.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,9 +7,12 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+/**
+ * Event Data Table
+ */
 @Getter
 @Setter
-@Entity(name = "events")
+@Entity(name = "eventsDataTable")
 public class Event {
 
     @Id

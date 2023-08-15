@@ -1,4 +1,4 @@
-package Afisha.reviews.Resourse;
+package Afisha.reviews.model;
 
 import org.springframework.data.repository.CrudRepository;
 

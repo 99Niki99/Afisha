@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 
+/**
+ * Class for get and put data from DB
+ * @version 1.1.1
+ */
+
 public class Controller {
 
     PutAndGet dataPut = new PutAndGet();

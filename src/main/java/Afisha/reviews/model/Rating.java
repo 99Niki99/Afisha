@@ -1,13 +1,17 @@
-package Afisha.reviews.Resourse;
+package Afisha.reviews.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Rating Data Table
+ */
+
 @Getter
 @Setter
-@Entity(name = "ratings")
+@Entity(name = "ratingsDataTable")
 public class Rating {
 
     @Id
