@@ -1,9 +1,12 @@
 package Afisha.reviews.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * Rating Data Table
@@ -12,9 +15,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity(name = "ratingsDataTable")
+@Data
 public class Rating {
 
     @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy ="uuid2")
+
     private Long id;
     private String ratingType; // Например, "good", "bad", "skip"
     private String sourceName;
