@@ -1,9 +1,11 @@
 package Afisha.reviews.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  *  Review Data table
@@ -15,7 +17,8 @@ import lombok.Setter;
 public class Review {
 
     @Id
-    private String iDReviewer;
+    private String id;
+
     private String iDEvent;
     private String ratingType;
     private String rating;
