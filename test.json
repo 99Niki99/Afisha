@@ -1,0 +1,31 @@
+
+"POST" : "/set-event-rating",
+"body" : "json"
+[{
+  "userId": string;
+  eventId: string uuidV4
+  rate: 'good' 'bad' 'skip'
+  sourceName: 'bot', 'web', 'mobile'
+  sourceType: 'test', 'demo', 'prod'
+}]
+return rateIds string uuidV4[]
+
+GET /get-all-events-rates
+[{
+  rateId: string; uuidV4
+  userId: string;
+  eventId: string uuidV4
+  rate: 'good' 'bad' 'skip'
+  sourceName: 'bot', 'web', 'mobile'
+  sourceType: 'test', 'demo', 'prod'
+}]
+
+GET /get-all-event-rates/{eventId}
+[{
+  rateId: string; uuidV4
+  userId: string;
+  eventId: string uuidV4
+  rate: 'good' 'bad' 'skip'
+  sourceName: 'bot', 'web', 'mobile'
+  sourceType: 'test', 'demo', 'prod'
+}]
