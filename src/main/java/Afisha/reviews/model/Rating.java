@@ -19,8 +19,11 @@ import org.hibernate.annotations.GenericGenerator;
 public class Rating {
 
     @Id
-    private Long id;
-    private String ratingType; // Например, "good", "bad", "skip"
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String eventId;
+    private String userID;
+    private String rate; // Например, "good", "bad", "skip"
     private String sourceName;
     private String sourceType; // Например, "test", "demo", "prod"
 
