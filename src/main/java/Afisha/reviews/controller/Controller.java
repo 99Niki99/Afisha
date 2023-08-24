@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -36,9 +38,10 @@ public class Controller {
     }
 
     @GetMapping("/getReview")
-    public ResponseEntity<String> getReview(@RequestParam String json) {
+    public ResponseEntity<String> getReview(@RequestParam MultipartFile json) throws IOException {
+        String stringJson = new String(json.getBytes());
         JsonSimpleParser jsonSimpleParser = new JsonSimpleParser();
-        Review review = jsonSimpleParser.parseAndCreateRating(json); // Создаем объект Rating из JSON
+        Review review = jsonSimpleParser.parseAndCreateRating(stringJson); // Создаем объект Rating из JSON
         reviewRepository.save(review); // Сохраняем рейтинг в базе данных
         return ResponseEntity.ok("Data saved successfully");
     }

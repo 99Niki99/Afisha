@@ -6,7 +6,6 @@ package Afisha.reviews.model;
 public class JsonSimpleParser {
     public Review parseAndCreateRating(String json) {
         Gson gson = new Gson();
-        Review review = gson.fromJson(json, Review.class);
-        return review;
+        return gson.fromJson(json, Review.class);
     }
 }
